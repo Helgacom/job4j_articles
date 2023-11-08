@@ -93,7 +93,7 @@ public class WordStore implements Store<Word>, AutoCloseable {
             while (selection.next()) {
                 words.add(new Word(
                         selection.getInt("id"),
-                        selection.getString("word")
+                        selection.getString("word").intern()
                 ));
             }
         } catch (Exception e) {
